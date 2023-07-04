@@ -4,70 +4,53 @@ type Clone = {
   gender: string;
 };
 
-let cloneList1 = [
+let clonePerson1 = [
   {
     name: "Boba Fett",
     age: 5,
     gender: "male",
   },
-  {
-    name: "Jango Fett",
-    age: 35,
-    gender: "male",
-  },
-  {
-    name: "Mace Windu",
-    age: 40,
-    gender: "male",
-  },
 ];
 
-let cloneList2 = [
-  {
-    name: "Yoda",
-    age: 800,
-    gender: "male",
-  },
+let clonePerson2 = [
   {
     name: "Princess Amidala",
     age: 25,
     gender: "female",
   },
-  {
-    name: "Anakin Skywalker",
-    age: 20,
-    gender: "male",
-  },
 ];
 
-let cloneList3 = [
+let clonePerson3 = [
   {
     name: "Obi-Wan Kenobi",
     age: 40,
     gender: "male",
   },
-  {
-    name: "Rey",
-    age: 20,
-    gender: "female",
-  },
-  {
-    name: "Ben Solo",
-    age: 20,
-    gender: "male",
-  },
 ];
 
-function createCloneArmy(clones: Clone[], count:number): Clone[] | null {
-  let result: string | null = "";
+function createCloneArmy(person: Clone[], count: number): Clone[] {
+  let result: Clone[] = [];
 
- 
-  return null;
+  let i = 0;
+  let y = 0;
+  if (count <= 100) {
+    while (y !== count) {
+      result = [...result, person[i]];
+      y++;
+    }
+  } else {
+    while (y !== 100) {
+      result = [...result, person[i]];
+      y++;
+    }
+  }
+
+  return result;
 }
 
-let result1: Clone[] | null = createCloneArmy(cloneList1, 25);
-let result2: Clone[] | null = createCloneArmy(cloneList2, 101);
-let result3: Clone[] | null = createCloneArmy(cloneList3, 15);
+let result1: Clone[] = createCloneArmy(clonePerson1, 25);
+let result2: Clone[] = createCloneArmy(clonePerson2, 101);
+let result3: Clone[] = createCloneArmy(clonePerson3, 15);
 
 console.log(result1);
 console.log(result2);
